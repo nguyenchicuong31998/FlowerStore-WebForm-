@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ADMIN.master.cs" Inherits="Admin_ADMIN" %>
+
+<%@ Register Src="~/Admin/ucAdminLeft.ascx" TagPrefix="uc1" TagName="ucAdminLeft" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../Image/logo.png">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+                .border{
+                    border:1px solid black;
+                }
+                .tenad{
+                    color:white;
+                    padding:5px;
+                    line-height: 46px;
+                }
+                .dangxuatad{
+                    color:white !important;
+                }
+                .dangxuatad:hover{
+                    color:white;
+                }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a href="TrangChuAdmin.aspx">Trang Chủ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><asp:Label CssClass="tenad" ID="lbltenad" runat="server" Text=""></asp:Label></li>
+                    <li style="color:white"><asp:LinkButton ID="Linkdangxuat" CssClass="dangxuatad" runat="server" OnClick="Linkdangxuat_Click" Visible="true">Đăng xuất</asp:LinkButton></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <uc1:ucAdminLeft runat="server" ID="ucAdminLeft" />
+            </div>
+            <div class="col-lg-9 border">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

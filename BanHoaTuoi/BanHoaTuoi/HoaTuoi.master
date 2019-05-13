@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HoaTuoi.master.cs" Inherits="HoaTuoi" %>
+
+<%@ Register Src="~/UC/ucHeader.ascx" TagPrefix="uc1" TagName="ucHeader" %>
+<%@ Register Src="~/UC/ucBanner.ascx" TagPrefix="uc1" TagName="ucBanner" %>
+<%@ Register Src="~/UC/ucnavbar.ascx" TagPrefix="uc1" TagName="ucnavbar" %>
+<%@ Register Src="~/UC/ucFooter.ascx" TagPrefix="uc1" TagName="ucFooter" %>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Hoa tươi</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="Image/logo.png">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+            overflow-x:hidden;
+        }
+        .head{
+            width:100%;
+            height:30px;
+        }
+        .banner{
+            width:100%;
+            height:300px;
+            position:relative;
+        }
+        .danhmuc {
+            width: 100%;
+            height: 50px;
+        }
+        @media only screen and (max-width: 480px) {
+        }
+
+      /*  .background {
+            background: url(Image/background2.jpg) no-repeat center;
+            background-size: cover;
+        }*/
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="head">
+            <uc1:ucHeader runat="server" ID="ucHeader" />
+        </header>
+        <div class="banner">
+            <uc1:ucBanner runat="server" ID="ucBanner" />
+        </div>
+        <div class="danhmuc">
+            <uc1:ucnavbar runat="server" ID="ucnavbar" />
+        </div>
+        <div class="noidung">
+            <asp:ContentPlaceHolder id="noidung" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <uc1:ucFooter runat="server" ID="ucFooter" />
+        </div>
+    </form>
+</body>
+</html>
